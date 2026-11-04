@@ -1,0 +1,19 @@
+{
+  "name": "@savesutra/site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SaveSutra landing website (GitHub Pages).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "*",
+    "@fontsource/jetbrains-mono": "*",
+    "@tailwindcss/vite": "^4.3.4",
+    "tailwindcss": "^4.3.4",
+    "vite": "^7.3.7"
+  }
+}

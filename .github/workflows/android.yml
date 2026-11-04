@@ -1,0 +1,66 @@
+name: Android APK
+
+# Builds the Android app and publishes it as the "latest" GitHub Release,
+# so the download link in the README always points to the newest APK.
+on:
+  push:
+    branches: [main]
+    paths: ['apps/web/**', 'packages/core/**', '.github/workflows/android.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-apk
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      - name: Build web app for Android
+        working-directory: apps/web
+        run: npx vite build --mode native && npx cap sync android
+      - name: Build APK
+        working-directory: apps/web/android
+        env:
+          SIGNING_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          SIGNING_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          chmod +x gradlew
+          if [ -n "$SIGNING_KEYSTORE_BASE64" ]; then
+            echo "$SIGNING_KEYSTORE_BASE64" | base64 -d > app/release.keystore
+            ./gradlew --no-daemon assembleRelease
+            cp app/build/outputs/apk/release/app-release.apk ../SaveSutra.apk
+          else
+            # Debug-signed APK: installs on any phone with "Install unknown apps" allowed.
+            ./gradlew --no-daemon assembleDebug
+            cp app/build/outputs/apk/debug/app-debug.apk ../SaveSutra.apk
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SaveSutra-apk
+          path: apps/web/SaveSutra.apk
+      - name: Publish "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest apps/web/SaveSutra.apk \
+            --title "SaveSutra for Android (latest build)" \
+            --notes "Built from ${GITHUB_SHA::7}. Download **SaveSutra.apk** below, open it on your Android phone and allow *Install unknown apps* when asked. Then share any link from Instagram, YouTube, Chrome or WhatsApp to SaveSutra." \
+            --latest

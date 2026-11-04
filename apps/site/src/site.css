@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/plus-jakarta-sans';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@theme {
+  --color-ink: #0b1220;
+  --color-ink-2: #4a5261;
+  --color-muted: #5b6474;
+  --color-line: #e3e6eb;
+  --color-bg: #f5f6f8;
+  --color-accent: #c93e10;
+  --color-accent-soft: #fde7da;
+  --color-brand: #3546c8;
+  --font-sans: 'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+.phone { border-radius: 40px; background: #0b1220; padding: 10px; box-shadow: 0 30px 60px -20px rgb(11 18 32 / 0.45); }
+.phone img, .phone video { border-radius: 30px; display: block; width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

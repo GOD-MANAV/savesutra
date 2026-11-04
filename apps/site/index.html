@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaveSutra: everything you save, finally makes sense</title>
+    <meta name="description" content="Share any reel, video, article, tweet, AI tool or web page to SaveSutra. It understands the content, files it by topic and date, and pulls out the links, tools and places inside, so you can find it later." />
+    <meta property="og:title" content="SaveSutra: everything you save, finally makes sense" />
+    <meta property="og:description" content="An AI second brain for everything you save from Instagram, YouTube, X, LinkedIn, WhatsApp and the web." />
+    <meta property="og:image" content="./screens/01-library.png" />
+    <meta name="theme-color" content="#0B1220" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./src/site.css" />
+  </head>
+  <body class="bg-white">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:rounded-lg focus:bg-ink focus:px-3 focus:py-2 focus:text-white">Skip to content</a>
+
+    <header class="sticky top-0 z-20 border-b border-line bg-white/90 backdrop-blur">
+      <nav aria-label="Main" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-3.5">
+        <a href="./" class="flex items-center gap-2.5 text-ink no-underline">
+          <img src="./favicon.svg" alt="" width="32" height="32" />
+          <span class="text-lg font-extrabold">SaveSutra</span>
+        </a>
+        <div class="flex flex-wrap items-center gap-5 text-sm font-semibold">
+          <a href="#how" class="hidden text-ink no-underline hover:text-accent sm:inline">How it works</a>
+          <a href="#features" class="hidden text-ink no-underline hover:text-accent sm:inline">Features</a>
+          <a href="#privacy" class="hidden text-ink no-underline hover:text-accent md:inline">Privacy</a>
+          <a href="https://github.com/GOD-MANAV/savesutra" class="text-ink no-underline hover:text-accent">GitHub</a>
+          <a href="https://github.com/GOD-MANAV/savesutra/releases/latest" class="rounded-xl bg-ink px-4 py-2.5 font-bold text-white no-underline hover:opacity-90">Download APK</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-14 pb-16 md:grid-cols-[1.15fr_1fr] md:pt-20">
+        <div class="flex flex-col gap-6">
+          <span class="self-start rounded-full bg-accent-soft px-3 py-1.5 text-[13px] font-bold text-[#7A2A0C]">For everyone who sends links to themselves on WhatsApp</span>
+          <h1 class="text-[40px] leading-[1.04] font-extrabold tracking-[-0.03em] md:text-6xl">Everything you save, finally makes sense.</h1>
+          <p class="max-w-xl text-lg leading-relaxed text-ink-2 md:text-xl">
+            Reels, YouTube videos, articles, tweets, LinkedIn posts, the latest AI tools, recipes, screenshots: share anything to SaveSutra. It reads the whole thing, files it by topic and date, and pulls out the links, tools and places inside. Then find it in seconds.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/GOD-MANAV/savesutra/releases/latest" class="flex h-13 items-center rounded-2xl bg-accent px-6 text-base font-bold text-white no-underline shadow-[0_10px_30px_rgb(201_62_16/0.3)] hover:bg-[#B23409]">Download for Android</a>
+            <a href="./app/" class="flex h-13 items-center rounded-2xl border-[1.5px] border-ink px-6 text-base font-bold text-ink no-underline hover:bg-bg">Try the web demo</a>
+          </div>
+          <p class="text-[13px] text-muted">Free &amp; open source (MIT) · Works offline-first · No account needed</p>
+        </div>
+        <div class="flex justify-center">
+          <div class="phone w-[290px] md:w-[320px]">
+            <video src="./promo.mp4" poster="./screens/01-library.png" autoplay muted loop playsinline aria-label="SaveSutra app walkthrough"></video>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="types" class="border-y border-line bg-bg">
+        <div class="mx-auto max-w-6xl px-5 py-10">
+          <h2 id="types" class="text-center text-sm font-extrabold tracking-[0.08em] text-muted uppercase">Save any kind of content</h2>
+          <ul class="mt-5 flex flex-wrap justify-center gap-2.5 text-sm font-bold">
+            <li class="rounded-full border border-line bg-white px-4 py-2">Instagram reels &amp; posts</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">YouTube videos &amp; Shorts</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">Articles &amp; blogs</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">X threads</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">LinkedIn posts</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">New AI tools</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">Recipes</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">Travel plans</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">Screenshots</li>
+            <li class="rounded-full border border-line bg-white px-4 py-2">Any web page</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="how" class="mx-auto max-w-6xl px-5 py-20">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Three steps. No folders.</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <article class="flex flex-col gap-3 rounded-3xl border border-line p-6">
+            <span class="font-mono text-[13px] font-semibold text-accent">01 · SHARE</span>
+            <h3 class="text-xl font-extrabold">Share from any app</h3>
+            <p class="leading-relaxed text-ink-2">Tap Share → SaveSutra on Android, paste a link, forward it to the SaveSutra WhatsApp bot, or import years of links from an old WhatsApp chat.</p>
+          </article>
+          <article class="flex flex-col gap-3 rounded-3xl border border-line p-6">
+            <span class="font-mono text-[13px] font-semibold text-accent">02 · UNDERSTAND</span>
+            <h3 class="text-xl font-extrabold">It reads the whole thing</h3>
+            <p class="leading-relaxed text-ink-2">AI reads the caption, transcribes the audio and scans the frames, then writes a summary and picks out the tools, places, links, prices and steps.</p>
+          </article>
+          <article class="flex flex-col gap-3 rounded-3xl border border-line p-6">
+            <span class="font-mono text-[13px] font-semibold text-accent">03 · FIND</span>
+            <h3 class="text-xl font-extrabold">Find it the way you remember it</h3>
+            <p class="leading-relaxed text-ink-2">“AI tool for slides”, “café in Hauz Khas”, “what did I save last week”. Browse as cards, a table, a whiteboard or a timeline.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-ink py-20 text-white">
+        <div class="mx-auto max-w-6xl px-5">
+          <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">See it in action</h2>
+          <p class="mt-2 max-w-2xl text-[#C9CED6]">Real screens from the app, with the sample library that ships for the demo.</p>
+          <div class="mt-10 flex gap-6 overflow-x-auto pb-4" tabindex="0" aria-label="App screenshots">
+            <figure class="w-[240px] shrink-0"><div class="phone"><img src="./screens/01-library.png" alt="Library home with weekly digest and saves grouped by day" loading="lazy" /></div><figcaption class="mt-3 text-sm font-bold">Library &amp; weekly digest</figcaption></figure>
+            <figure class="w-[240px] shrink-0"><div class="phone"><img src="./screens/02-detail.png" alt="A saved reel with summary, key points and extracted tools" loading="lazy" /></div><figcaption class="mt-3 text-sm font-bold">Deep extraction</figcaption></figure>
+            <figure class="w-[240px] shrink-0"><div class="phone"><img src="./screens/08-ai-tools.png" alt="Smart collection listing every AI tool across saves" loading="lazy" /></div><figcaption class="mt-3 text-sm font-bold">Every AI tool you saved</figcaption></figure>
+            <figure class="w-[240px] shrink-0"><div class="phone"><img src="./screens/03-table.png" alt="Numbered table view with Excel export" loading="lazy" /></div><figcaption class="mt-3 text-sm font-bold">Table + Excel export</figcaption></figure>
+            <figure class="w-[240px] shrink-0"><div class="phone"><img src="./screens/05-timeline.png" alt="Timeline with a heatmap of saves per day" loading="lazy" /></div><figcaption class="mt-3 text-sm font-bold">Timeline by day, week, month</figcaption></figure>
+            <figure class="w-[240px] shrink-0"><div class="phone"><img src="./screens/11-dark.png" alt="Dark mode" loading="lazy" /></div><figcaption class="mt-3 text-sm font-bold">Dark mode</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="mx-auto max-w-6xl px-5 py-20">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Built for how India saves things</h2>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">WhatsApp-first</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">Keep forwarding links like you always have. The bot saves them and answers “find goa”. Import an exported chat and every old link keeps its date.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Deep extraction</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">Links said in the audio or shown on screen, not just the caption. Places open in Maps, tools open their site.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Smart collections</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">“All AI tools”, “Places”, “Books”, “Recipes” build themselves from what’s inside your saves.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Four layouts</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">Cards to browse, a numbered table to sort and export to Excel, a whiteboard to brainstorm, a timeline with a heatmap.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Search like you remember</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">Typo-tolerant search across titles, notes, tools and places, with filters like <code class="font-mono text-[13px]">cat:ai</code> and <code class="font-mono text-[13px]">from:youtube</code>.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Weekly digest &amp; resurfacing</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">See what you saved this week, “On this day” memories, and To try / Done status so good saves don’t die.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Offline-first</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">Your library lives on your phone. Connect your own server only if you want the WhatsApp bot.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Bring your own AI key</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">Use a free Gemini key. Without one, smart rules still tag, categorise and extract links.</p></div>
+          <div class="rounded-2xl border border-line p-5"><h3 class="font-extrabold">Open source</h3><p class="mt-1.5 text-sm leading-relaxed text-ink-2">React, Capacitor, Hono, SQLite FTS5 and Gemini. MIT-licensed, tested, documented.</p></div>
+        </div>
+      </section>
+
+      <section id="privacy" class="bg-ink text-white">
+        <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[1fr_1.4fr]">
+          <div class="flex flex-col gap-4">
+            <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Private by design</h2>
+            <p class="leading-relaxed text-[#C9CED6]">Designed around India’s DPDP Act and Rules: a clear notice, consent you can withdraw, and one-tap export and delete.</p>
+            <a href="./privacy.html" class="self-start font-bold text-[#FFB59A]">Read the privacy notice →</a>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="rounded-2xl border border-[#2A3345] p-5"><strong>Notes, not copies</strong><p class="mt-1.5 text-sm leading-relaxed text-[#C9CED6]">Videos are analysed, then deleted. Only the link, the extracted notes and your own note are kept.</p></div>
+            <div class="rounded-2xl border border-[#2A3345] p-5"><strong>Public posts only</strong><p class="mt-1.5 text-sm leading-relaxed text-[#C9CED6]">No logins, cookies or private accounts. Ever.</p></div>
+            <div class="rounded-2xl border border-[#2A3345] p-5"><strong>Export &amp; delete</strong><p class="mt-1.5 text-sm leading-relaxed text-[#C9CED6]">Download everything as Excel, CSV or JSON. Delete it all in one tap, or send “stop” to the bot.</p></div>
+            <div class="rounded-2xl border border-[#2A3345] p-5"><strong>Clear AI labels</strong><p class="mt-1.5 text-sm leading-relaxed text-[#C9CED6]">Every summary says whether it was written by AI or rules, so you know what to double-check.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-5 py-20">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight">Stop losing good saves.</h2>
+          <p class="mt-2 text-ink-2">Android APK from GitHub Releases · the web demo runs in your browser, no install.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/GOD-MANAV/savesutra/releases/latest" class="flex h-13 items-center rounded-2xl bg-accent px-6 font-bold text-white no-underline hover:bg-[#B23409]">Download APK</a>
+          <a href="./app/" class="flex h-13 items-center rounded-2xl border-[1.5px] border-ink px-6 font-bold text-ink no-underline">Open web demo</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line">
+      <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 px-5 py-6 text-[13px] text-muted">
+        <span>© 2026 Manav Yadav · MIT licence · <a href="./privacy.html" class="text-muted">Privacy</a></span>
+        <span>SaveSutra is not affiliated with Instagram, YouTube, WhatsApp, Meta or Google.</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+name: Website & web demo
+
+# Publishes the landing page at / and the full web app (demo mode) at /app/
+# to the gh-pages branch, which GitHub Pages serves.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build -w @savesutra/site
+      - run: npm run build -w @savesutra/web
+      - name: Assemble site
+        run: |
+          mkdir -p public
+          cp -r apps/site/dist/. public/
+          mkdir -p public/app
+          cp -r apps/web/dist/. public/app/
+          touch public/.nojekyll
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true
