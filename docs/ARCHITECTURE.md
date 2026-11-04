@@ -92,6 +92,6 @@ AI output always goes through `parseModelOutput` (zod) and is merged with rule-f
 
 | Piece | Where | How |
 |---|---|---|
-| Website + web demo | GitHub Pages (`gh-pages`) | `.github/workflows/pages.yml` |
+| Website + web app | GitHub Pages (`gh-pages`) | `.github/workflows/pages.yml` |
 | Android APK | GitHub Releases (`latest`) | `.github/workflows/android.yml` |
 | Server | Any Docker host (Render blueprint included) | `apps/server/Dockerfile`, `render.yaml` |

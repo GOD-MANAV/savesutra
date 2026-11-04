@@ -44,10 +44,11 @@ function GroupNode({ data, width, height }: NodeProps<Node<GroupData>>) {
 const nodeTypes: NodeTypes = { card: CardNode as NodeTypes[string], frame: GroupNode as NodeTypes[string] };
 
 /**
- * Whiteboard (React Flow, MIT): saves grouped by category in frames. Drag cards
+ * Whiteboard (React Flow): saves grouped by category in frames. Drag cards
  * to arrange them; positions are saved. Double-click a card to open it.
  */
 function Board({ items }: { items: SaveItem[] }) {
+  const isPhone = typeof window !== 'undefined' && window.innerWidth < 640;
   const nodes = useMemo(() => {
     const byCat = new Map<Category, SaveItem[]>();
     for (const it of items) {
@@ -90,9 +91,10 @@ function Board({ items }: { items: SaveItem[] }) {
       key={nodes.length}
       nodeTypes={nodeTypes}
       onNodeDragStop={onDragStop}
-      fitView
-      // On phones, start zoomed on the first two frames instead of shrinking everything.
-      fitViewOptions={{ padding: 0.12, nodes: typeof window !== 'undefined' && window.innerWidth < 640 ? nodes.filter((n) => n.type === 'frame').slice(0, 1) : undefined }}
+      // Phones start at the top-left frame at readable size; larger screens fit everything.
+      fitView={!isPhone}
+      defaultViewport={isPhone ? { x: 12, y: 12, zoom: 0.62 } : undefined}
+      fitViewOptions={{ padding: 0.12 }}
       minZoom={0.2}
       maxZoom={1.6}
       proOptions={{ hideAttribution: false }}
@@ -100,7 +102,7 @@ function Board({ items }: { items: SaveItem[] }) {
     >
       <Background variant={BackgroundVariant.Dots} gap={18} size={1} color="var(--border-strong)" />
       <Controls showInteractive={false} position="bottom-right" />
-      <MiniMap pannable zoomable position="bottom-left" nodeColor={(n) => (n.type === 'frame' ? CATEGORY_COLORS[(n.data as GroupData).category].border : 'var(--ink-2)')} />
+      {!isPhone && <MiniMap pannable zoomable position="bottom-left" nodeColor={(n) => (n.type === 'frame' ? CATEGORY_COLORS[(n.data as GroupData).category].border : 'var(--ink-2)')} />}
     </ReactFlow>
   );
 }

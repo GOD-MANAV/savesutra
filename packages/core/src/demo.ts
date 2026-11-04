@@ -84,7 +84,7 @@ const SEEDS: Seed[] = [
     a: {
       title: 'Build a portfolio website in 1 hour for ₹0',
       summary: 'Step-by-step guide to a personal portfolio using a free template, GitHub Pages hosting and a custom domain, with tips on what recruiters look for.',
-      keyPoints: ['Start from an open-source template', 'Host free on GitHub Pages', 'Add a custom domain for about ₹700 a year', 'Lead with 3 strong projects, not 10 weak ones'],
+      keyPoints: ['Start from a ready-made template', 'Host free on GitHub Pages', 'Add a custom domain for about ₹700 a year', 'Lead with 3 strong projects, not 10 weak ones'],
       category: 'Tech',
       tags: ['portfolio', 'github', 'web', 'career', 'free-tools'],
       entities: [

@@ -45,6 +45,6 @@ The DPDP Rules were notified on 13–14 November 2025 with a phased rollout. The
 - Real buttons, links and labelled inputs; visible focus rings; touch targets ≥ 44 px.
 - `prefers-reduced-motion` respected; dark mode; table view as a keyboard-friendly alternative to the board.
 
-## 6. Open-source licences
+## 6. Third-party components
 
-All dependencies are permissive (MIT, Apache-2.0, ISC, MPL-2.0 for the share-target plugin). React Flow (MIT) was chosen over tldraw because tldraw's SDK needs a commercial licence for production.
+SaveSutra itself is proprietary (all rights reserved). The third-party libraries it uses carry permissive licences (MIT, Apache-2.0, ISC, MPL-2.0 for the share-target plugin). React Flow (MIT) was chosen over tldraw because tldraw's SDK needs a commercial licence for production.

@@ -198,10 +198,7 @@ export function SettingsScreen() {
       </Card>
 
       <p className="pb-4 text-center text-xs text-muted">
-        SaveSutra {__APP_VERSION__} · MIT licence ·{' '}
-        <a href="https://github.com/GOD-MANAV/savesutra" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand">
-          Source on GitHub
-        </a>
+        SaveSutra {__APP_VERSION__} · © 2026 Manav Yadav. All rights reserved.
         <br />
         Not affiliated with Instagram, YouTube, WhatsApp, Meta or Google.
       </p>

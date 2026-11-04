@@ -86,8 +86,8 @@ Six months later:
 | **Gemini** for analysis | Native video understanding (YouTube by URL), JSON-schema output, generous free tier |
 | **Bring-your-own key** on device | No backend cost; user controls their data |
 | Bot is **save and search only** | WhatsApp Business Platform rules ban general-purpose AI chatbots from 15 Jan 2026 |
-| **React Flow** over tldraw for the board | MIT licence; tldraw's SDK needs a paid production licence |
-| **Capacitor** for Android | One codebase for the web demo, PWA and APK; native share target and HTTP |
+| **React Flow** over tldraw for the board | Permissive licence for commercial use; tldraw's SDK needs a paid production licence |
+| **Capacitor** for Android | One codebase for the web app, PWA and APK; native share target and HTTP |
 | No voice features in v1 | Scope choice for the challenge |
 
 ## 7. Risks

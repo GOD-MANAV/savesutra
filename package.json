@@ -3,10 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "description": "AI second brain for links: share any reel, video, post or link and find it later.",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "author": "Manav Yadav",
-  "workspaces": ["packages/*", "apps/*"],
-  "engines": { "node": ">=22" },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test": "npm run test -w @savesutra/core && npm run test -w @savesutra/server && npm run test -w @savesutra/web",
     "typecheck": "npm run typecheck --workspaces --if-present",
